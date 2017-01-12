@@ -8,7 +8,7 @@ aliddns_domain=xxxxxxxx.com
 aliddns_ttl=600
 
 timestamp=`date -u "+%Y-%m-%dT%H%%3A%M%%3A%SZ"`
-ip=`$aliddns_curl 2>&1` || die "$ip"
+ip=`curl -s --interface ppp0 whatismyip.akamai.com 2>&1` || die "$ip"
 
 urlencode() {
     # urlencode <string>
